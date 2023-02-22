@@ -9,7 +9,7 @@ st.title('Анализ выбора портфеля по коэффициент
 uploaded_file = st.file_uploader(label='Вставьте данные для анализа')
 result = st.button('Провести анализ')
 if result is not None:
-    data = pd.read_csv(uploaded_file.getvalue())
+    data = pd.read_csv(uploaded_file)
     data = np.array(data)
     data = np.delete(data, 0, axis = 1)
     periods_in_data = data.shape[0]
